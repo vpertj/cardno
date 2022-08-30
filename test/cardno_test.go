@@ -1,27 +1,28 @@
-package cardno
+package test
 
 import (
 	"fmt"
+	"github.com/vpertj/cardno"
 	"testing"
 )
 
 func TestValidate18IdCardNo_1(t *testing.T) {
 	idNo := "110101199003074119"
-	if !Validate18CardNo(idNo) {
+	if !cardno.Validate18CardNo(idNo) {
 		t.Fail()
 	}
 }
 
 func TestValidate18IdCardNo_2(t *testing.T) {
 	idNo := "11010119900307411X"
-	if !Validate18CardNo(idNo) {
+	if !cardno.Validate18CardNo(idNo) {
 		t.Fail()
 	}
 }
 
 func TestParse18IdCardNoInfo(t *testing.T) {
 	idNo := "110101199003074119"
-	result, info := Parse18CardNoInfo(idNo)
+	result, info := cardno.Parse18CardNoInfo(idNo)
 	if !result {
 		t.Fail()
 	} else {
@@ -30,12 +31,12 @@ func TestParse18IdCardNoInfo(t *testing.T) {
 }
 
 func TestAutoCreate18IdCardNo(t *testing.T) {
-	idNo := AutoCreate18CardNo()
+	idNo := cardno.AutoCreate18CardNo()
 	fmt.Println(idNo)
-	if !Validate18CardNo(idNo) {
+	if !cardno.Validate18CardNo(idNo) {
 		t.Fail()
 	}
-	result, info := Parse18CardNoInfo(idNo)
+	result, info := cardno.Parse18CardNoInfo(idNo)
 	if !result {
 		t.Fail()
 	} else {
