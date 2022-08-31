@@ -121,3 +121,25 @@ func getSex(idNo string) int {
 	sex, _ := strconv.Atoi(idNo[16:17])
 	return sex % 2
 }
+
+// GetSex 性别(男、女)
+func GetSex(idCard string) (string, int) {
+	se := idCard[16:17]
+	see, _ := strconv.ParseInt(se, 10, 0)
+	var sex string
+	sexi := 0
+	if see%2 == 0 {
+		sex = "女"
+		sexi = 1
+
+	} else {
+		sex = "男"
+		sexi = 0
+	}
+	return sex, sexi
+}
+
+// GetAreaCode 获取地区编码
+func GetAreaCode(idCard string) string {
+	return idCard[0:6]
+}
