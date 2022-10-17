@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"github.com/vpertj/cardno"
+	"github.com/waketj/cardno"
 	"testing"
 )
 
