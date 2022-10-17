@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/vpertj/cardno/timex"
+	"github.com/waketj/cardno/timex"
 )
 
 // 权重
